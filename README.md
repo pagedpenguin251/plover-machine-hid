@@ -94,9 +94,9 @@ For historical reasons we reuse the names of the standard steno keys, but we add
 The keys are ordered as follows:
 
 ```
-   S- T- K- P- W- H- R- A- O- * -E -U -F -R -P -B -L -G -T -S -D -Z #
+   S1- S2- T- K- P- W- H- R- A- O- *1 *2 *3 *4 -E -U -F -R -P -B -L -G -T -S -D -Z #
 ```
-and are then followed by key `X1-X26`
+and are then followed by key `X1-X37`
 
 So the first bit/byte of the report (after the report type byte) maps to key
 `S-` and the last bit/byte of the report maps to `X26`.
