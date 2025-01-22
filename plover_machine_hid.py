@@ -8,7 +8,7 @@ See the README for more details on the protocol.
 
 The order of the buttons (from left to right) is the same as in `KEYS_LAYOUT`.
 Most buttons have the same names as in GeminiPR, except for the extra buttons
-which are called X1-X26.
+which are called X1-X37.
 '''
 
 from plover.machine.base import ThreadedStenotypeBase
@@ -43,29 +43,28 @@ SIMPLE_REPORT_LEN: int = N_LEVERS // 8
 class InvalidReport(Exception):
     pass
 
-STENO_KEY_CHART = ("S-", "T-", "K-", "P-", "W-", "H-",
-                   "R-", "A-", "O-", "*", "-E", "-U",
-                   "-F", "-R", "-P", "-B", "-L", "-G",
-                   "-T", "-S", "-D", "-Z", "#",
-                   "X1", "X2", "X3", "X4", "X5", "X6",
-                   "X7", "X8", "X9", "X10", "X11", "X12",
-                   "X13", "X14", "X15", "X16", "X17", "X18",
-                   "X19", "X20", "X21", "X22", "X23", "X24",
-                   "X25", "X26", "X27", "X28", "X29", "X30",
-                   "X31", "X32", "X33", "X34", "X35", "X36",
-                   "X37", "X38", "X39", "X40", "X41")
+STENO_KEY_CHART = ("S1-", "S2-", "T-", "K-", "P-", "W-", 
+                   "H-", "R-", "A-", "O-", "*1", "*2", 
+                   "*3", "*4", "-E", "-U", "-F", "-R", 
+                   "-P", "-B", "-L", "-G", "-T", "-S", 
+                   "-D", "-Z", "#", "X1", "X2", "X3", 
+                   "X4", "X5", "X6", "X7", "X8", "X9", 
+                   "X10", "X11", "X12", "X13", "X14", "X15", 
+                   "X16", "X17", "X18", "X19", "X20", "X21", 
+                   "X22", "X23", "X24", "X25", "X26", "X27", 
+                   "X28", "X29", "X30", "X31", "X32", "X33", 
+                   "X34", "X35", "X36", "X37")
 
 class HidMachine(ThreadedStenotypeBase):
     KEYS_LAYOUT: str = '''
-        #  #  #  #  #  #  #  #  #  #
-        S- T- P- H- *  -F -P -L -T -D
-        S- K- W- R- *  -R -B -G -S -Z
-              A- O-    -E -U
+         #  #  #  #  #      #  #  #  #  #
+        S1- T- P- H- *1  *3 -F -P -L -T -D
+        S1- K- W- R- *2  *4 -R -B -G -S -Z
+               A- O-        -E -U
      X1  X2  X3  X4  X5  X6  X7  X8  X9  X10
      X11 X12 X13 X14 X15 X16 X17 X18 X19 X20
      X21 X22 X23 X24 X25 X26 X27 X28 X29 X30
-     X31 X32 X33 X34 X35 X36 X37 X38 X39 X40
-     X41
+     X31 X32 X33 X34 X35 X36 X37
     '''
     def __init__(self, params):
         super().__init__()
